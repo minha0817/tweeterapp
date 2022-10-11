@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.new-tweet-comment {
+  padding: 10px;
+}
+
+.new-tweet-comments {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 5px solid;
+  padding-bottom: 10px;
+}
+
+.new-tweet-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em;
+  font-family: 'Bungee', cursive;
+}
+
+.new-tweet-button {
+  background-color: #4056A1;
+  border: none;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  /* display: inline-block; */
+  padding: 0 10px 0 10px;
+}
+
+#tweet-text {
+    resize: none;
+    white-space: nowrap;
+    /* color: none; */
+    border-style: none;
+    border-color: none;
+    overflow: auto;
+    outline: none;
+    background-color: #f4f1ec;
+    /* overflow-x: scroll; or hidden */
+}
