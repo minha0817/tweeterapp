@@ -3,12 +3,18 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel='stylesheet' href='/styles/header.css' type='text/css' />
+    <link rel='stylesheet' href='/styles/nav.css' type='text/css' />
+    <link rel='stylesheet' href='/styles/new-tweet.css' type='text/css'/>
+
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,10 +26,41 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class='nav-title-margin'>
+        <span class='nav-title'>tweeter</span>
+      </div>
+      <div class='nav-rightbox'>
+        <span><b>Write</b> a new tweet</span>
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
     </nav>
 
+    <header>
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div class='header-name'>
+          <span class='header-name-first'>Minha</span>
+          <span>Kim</span>
+      </div>
+  </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method='POST' action='/tweets'>
+          <div class='new-tweet-comments'>
+            <label class="new-tweet-comment" for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" rows='1' cols='70'></textarea>
+          </div>
+          <div class='new-tweet-bottom'>
+            <button class="new-tweet-button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    </main>
   </body>
 </html>
