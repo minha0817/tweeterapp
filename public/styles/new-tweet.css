@@ -44,3 +44,7 @@
     background-color: #f4f1ec;
     /* overflow-x: scroll; or hidden */
 }
+
+.negative-remaining {
+  color: red;
+}
