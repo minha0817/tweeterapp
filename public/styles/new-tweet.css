@@ -11,7 +11,7 @@
 .new-tweet-comments {
   display: flex;
   flex-direction: column;
-  border-bottom: 5px solid;
+  border-bottom: 4px solid;
   padding-bottom: 10px;
 }
 
