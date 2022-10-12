@@ -1,8 +1,9 @@
 .tweets {
   border: 4px solid ;
-  height: 200px;
+  height: 250px;
   background-color: transparent;
   padding: 1em;
+  margin-bottom: 2em;
 }
 
 .tweets-header{
