@@ -14,6 +14,8 @@
     <link rel='stylesheet' href='/styles/header.css' type='text/css' />
     <link rel='stylesheet' href='/styles/nav.css' type='text/css' />
     <link rel='stylesheet' href='/styles/new-tweet.css' type='text/css'/>
+    <link rel='stylesheet' href='/styles/tweets.css' type='text/css'/>
+
 
 
     <!-- External JS -->
@@ -37,7 +39,7 @@
       </div>
     </nav>
 
-    <header>
+    <header class='header'>
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -51,7 +53,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <!-- <h2>Compose Tweet</h2> -->
         <form method='POST' action='/tweets'>
           <div class='new-tweet-comments'>
             <label class="new-tweet-comment" for="tweet-text">What are you humming about?</label>
@@ -62,6 +64,25 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+        <section class='tweets'>
+          <header class='tweets-header'>
+            <div>
+              <i class="fa-regular fa-face-grin-stars"></i>              
+              <span>Minha Kim</span>
+            </div>
+            <span class='tweets-nickname'>@minhakk24</span>
+          </header>
+          <p class='tweets-message'>It's my first tweet message 🌸</p>
+          <footer class='tweets-footer'>
+            <span>10 days ago</span>
+            <div class='tweets-icons'>
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-sharp fa-solid fa-retweet"></i>          
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            
+          </footer>
+        </section>
       </section>
     </main>
   </body>
