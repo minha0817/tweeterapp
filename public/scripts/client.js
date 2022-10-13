@@ -9,6 +9,7 @@ $(document).ready(() => {
 
   const renderTweets = function (tweets) {
     // loops through tweets
+    $tweetsContainer.html("");
     for (let tweet of tweets) {
       // calls createTweetElement for each tweet
       const result = createTweetElement(tweet);
@@ -49,11 +50,12 @@ $(document).ready(() => {
 
   //Add an Event Listener and Prevent the Default Behaviour
   const $form = $("form");
+  const $tweetText = $("#tweet-text");
   $form.on("submit", (event) => {
     event.preventDefault();
     // Form Data into a query string.
     const serializedForm = $form.serialize();
-    const textAreaValue = $("#tweet-text").val();
+    const textAreaValue = $tweetText.val();
 
     if (textAreaValue === "" || textAreaValue === null) {
       return alert("Please, type the tweet 👻");
@@ -74,6 +76,8 @@ $(document).ready(() => {
       .catch((error) => {
         console.log(error);
       });
+
+    $tweetText.val("");
   });
 
   //fetching tweets from the webpage.
@@ -92,4 +96,6 @@ $(document).ready(() => {
         console.log(error);
       });
   };
+
+  loadTweets();
 });
