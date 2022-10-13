@@ -5,6 +5,12 @@
  */
 
 $(document).ready(() => {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const $tweetsContainer = $("#tweets-container");
 
   const renderTweets = function (tweets) {
@@ -23,7 +29,7 @@ $(document).ready(() => {
     const userName = tweetObj.user.name;
     const avatars = tweetObj.user.avatars;
     const nickname = tweetObj.user.handle;
-    const tweetText = tweetObj.content.text;
+    const tweetText = escape(tweetObj.content.text);
     const createdTime = tweetObj.created_at;
 
     const $tweet = `<article class='tweets'>
