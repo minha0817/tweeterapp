@@ -5,6 +5,9 @@
  */
 
 $(document).ready(() => {
+  const $error = $(".error");
+  $error.hide();
+
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -64,11 +67,11 @@ $(document).ready(() => {
     const textAreaValue = $tweetText.val();
 
     if (textAreaValue === "" || textAreaValue === null) {
-      return alert("Please, type the tweet 👻");
+      return $error.slideDown("slow");
     }
 
     if (textAreaValue.length > 140) {
-      return alert("Oopsy! That's too long 👽");
+      return $error.slideDown("slow");
     }
 
     $.ajax({
@@ -78,6 +81,7 @@ $(document).ready(() => {
     })
       .then((response) => {
         loadTweets();
+        $error.slideUp();
       })
       .catch((error) => {
         console.log(error);
