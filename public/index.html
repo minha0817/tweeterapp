@@ -55,6 +55,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="error">Error message : Please type valid message 🤪 </div>
         <!-- <h2>Compose Tweet</h2> -->
         <form method='POST' action='/tweets'>
           <div class='new-tweet-comments'>
@@ -66,6 +67,7 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+
         <section id='tweets-container'>
           <!-- <article class='tweets'>
             <header class='tweets-header'>
