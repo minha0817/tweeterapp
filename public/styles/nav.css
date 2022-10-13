@@ -34,3 +34,9 @@ nav {
 .fa-angles-down {
   color: red;
 }
+
+@media screen and (max-width: 768px){
+  nav {
+    background-color: transparent;
+  }
+}
