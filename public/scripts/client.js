@@ -3,42 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const tweetData = {
-  user: {
-    name: "Newton",
-    avatars: "https://i.imgur.com/73hZDYK.png",
-    handle: "@SirIsaac",
-  },
-  content: {
-    text: "If I have seen further it is by standing on the shoulders of giants",
-  },
-  created_at: 1461116232227,
-};
-
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
 
 $(document).ready(() => {
   const $tweetsContainer = $("#tweets-container");
@@ -48,7 +12,7 @@ $(document).ready(() => {
     for (let tweet of tweets) {
       // calls createTweetElement for each tweet
       const result = createTweetElement(tweet);
-      $tweetsContainer.append(result);
+      $tweetsContainer.prepend(result);
     }
   };
 
@@ -71,7 +35,7 @@ $(document).ready(() => {
     </header>
     <p class='tweets-message'>${tweetText}</p>
     <footer class='tweets-footer'>
-      <span>${createdTime}</span>
+      <span>${timeago.format(createdTime)}</span>
       <div class='tweets-icons'>
         <i class="fa-solid fa-flag"></i>
         <i class="fa-sharp fa-solid fa-retweet"></i>          
@@ -95,10 +59,28 @@ $(document).ready(() => {
       data: serializedForm, //be sent to the server in the data field of the AJAX POST request.
     })
       .then((response) => {
-        renderTweets(data);
+        loadTweets();
       })
       .catch((error) => {
         console.log(error);
       });
   });
+
+  //fetching tweets from the webpage.
+  const loadTweets = function () {
+    // Ajax GET request to /tweets.
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      dataType: "json",
+    })
+      .then((response) => {
+        // renderTweets, passing it the response from the AJAX request ???
+        console.log("response", response);
+        renderTweets(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 });
