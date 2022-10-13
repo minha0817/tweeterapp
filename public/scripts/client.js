@@ -53,6 +53,16 @@ $(document).ready(() => {
     event.preventDefault();
     // Form Data into a query string.
     const serializedForm = $form.serialize();
+    const textAreaValue = $("#tweet-text").val();
+
+    if (textAreaValue === "" || textAreaValue === null) {
+      return alert("Please, type the tweet 👻");
+    }
+
+    if (textAreaValue.length > 140) {
+      return alert("Oopsy! That's too long 👽");
+    }
+
     $.ajax({
       url: "/tweets",
       method: "POST",
@@ -76,7 +86,6 @@ $(document).ready(() => {
     })
       .then((response) => {
         // renderTweets, passing it the response from the AJAX request ???
-        console.log("response", response);
         renderTweets(response);
       })
       .catch((error) => {
