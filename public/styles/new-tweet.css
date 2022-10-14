@@ -1,8 +1,6 @@
 .container {
   display: flex;
-  /* justify-content: space-between; */
   margin: 1em;
-  /* min-width: 100vh; */
 }
 
 .new-tweet-comment {
