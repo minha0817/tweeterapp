@@ -1,10 +1,6 @@
 
 nav {
   height: 120px;
-  position: fixed;
-  right: 0;
-  left: 0;
-  min-width: 100vh;
   background-color: #4056A1;
   color: #FFFFFF;
   display: flex;
@@ -25,18 +21,21 @@ nav {
 
 .nav-rightbox {
   margin-right: 1.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: column;  
   align-items: center;
 }
 
+
 .fa-angles-down {
   color: red;
+  margin-top: 0.5em;
 }
 
 @media screen and (max-width: 768px){
   nav {
-    background-color: transparent;
+    background-color: #c1c3e0;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   }
 }
