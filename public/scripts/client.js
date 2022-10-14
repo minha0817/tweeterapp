@@ -101,5 +101,11 @@ $(document).ready(() => {
       });
   };
 
+  $("#focus_scroll").click(function () {
+    console.log("it's clicked!!!!!");
+    $tweetText.focus();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  });
+
   loadTweets();
 });
