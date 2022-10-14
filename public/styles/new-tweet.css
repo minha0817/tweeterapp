@@ -1,7 +1,8 @@
 .container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin: 1em;
+  /* min-width: 100vh; */
 }
 
 .new-tweet-comment {
@@ -42,7 +43,7 @@
     overflow: auto;
     outline: none;
     background-color: #f4f1ec;
-    /* overflow-x: scroll; or hidden */
+    overflow:hidden;
 }
 
 .negative-remaining {
