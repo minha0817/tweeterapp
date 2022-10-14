@@ -7,6 +7,8 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+  position: sticky;
+  top: 0;
 }
 
 .nav-title-margin {
@@ -31,6 +33,10 @@ nav {
 .fa-angles-down {
   color: red;
   margin-top: 0.5em;
+}
+
+.fa-angles-down:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px){
