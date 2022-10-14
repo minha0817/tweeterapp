@@ -39,11 +39,12 @@ main section {
   max-width: 100%;
 }
 
-/* @media only screen and (min-width: 768px) {
-  .header {
-    margin: 50px;
+@media screen and (max-width: 768px){
+  nav {
+    background-color: #c1c3e0;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   }
-} */
+}
 
 @media only screen and (min-width: 768px) {
   body {
@@ -64,3 +65,4 @@ main section {
     width: 50%;
   }
 }
+
