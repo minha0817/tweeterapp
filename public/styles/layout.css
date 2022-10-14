@@ -44,6 +44,11 @@ main section {
     background-color: #c1c3e0;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   }
+
+  .header {
+    position: sticky;
+    top: 120px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
