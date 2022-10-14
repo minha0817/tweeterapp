@@ -60,6 +60,7 @@ $(document).ready(() => {
   //Add an Event Listener and Prevent the Default Behaviour
   const $form = $("form");
   const $tweetText = $("#tweet-text");
+  const $counter = $(".counter");
   $form.on("submit", (event) => {
     event.preventDefault();
     // Form Data into a query string.
@@ -87,6 +88,7 @@ $(document).ready(() => {
         console.log(error);
       });
 
+    $counter.val(140);
     $tweetText.val("");
   });
 
