@@ -45,4 +45,5 @@
 .fa-heart:hover {
   color: #c1c3e0;
   transition: 0.2s;
+  cursor: pointer;
 }
