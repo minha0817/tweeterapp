@@ -7,7 +7,7 @@
   padding: 10px;
 }
 
-.new-tweet-comments {
+.new-tweet-comments { 
   display: flex;
   flex-direction: column;
   border-bottom: 4px solid;
