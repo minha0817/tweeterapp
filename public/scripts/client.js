@@ -17,18 +17,14 @@ $(document).ready(() => {
   const $tweetsContainer = $("#tweets-container");
 
   const renderTweets = function (tweets) {
-    // loops through tweets
     $tweetsContainer.html("");
     for (let tweet of tweets) {
-      // calls createTweetElement for each tweet
       const result = createTweetElement(tweet);
       $tweetsContainer.prepend(result);
     }
   };
 
   const createTweetElement = function (tweetObj) {
-    // return the whole article element;
-
     const userName = tweetObj.user.name;
     const avatars = tweetObj.user.avatars;
     const nickname = tweetObj.user.handle;
@@ -57,7 +53,6 @@ $(document).ready(() => {
     return $tweet;
   };
 
-  //Add an Event Listener and Prevent the Default Behaviour
   const $form = $("form");
   const $tweetText = $("#tweet-text");
   const $counter = $(".counter");
@@ -78,7 +73,7 @@ $(document).ready(() => {
     $.ajax({
       url: "/tweets",
       method: "POST",
-      data: serializedForm, //be sent to the server in the data field of the AJAX POST request.
+      data: serializedForm,
     })
       .then((response) => {
         loadTweets();
@@ -92,16 +87,13 @@ $(document).ready(() => {
     $tweetText.val("");
   });
 
-  //fetching tweets from the webpage.
   const loadTweets = function () {
-    // Ajax GET request to /tweets.
     $.ajax({
       url: "/tweets",
       method: "GET",
       dataType: "json",
     })
       .then((response) => {
-        // renderTweets, passing it the response from the AJAX request ???
         renderTweets(response);
       })
       .catch((error) => {
