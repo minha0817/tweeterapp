@@ -1,6 +1,6 @@
 .tweets {
   border: 4px solid ;
-  height: 250px;
+  min-height: 250px;
   background-color: transparent;
   padding: 1em;
   margin-bottom: 2em;
@@ -15,6 +15,7 @@
 .tweets-message {
   padding: 0.5em;
   border-bottom: 4px solid;
+  word-break: break-all; 
 }
 
 .tweets-nickname {
@@ -33,11 +34,6 @@
 .fa-heart {
   margin-right: 0.5em;
 }
-
-/* .tweets-icons{
-  font-size: 20px;
-} */
-
 
 .tweets:hover {
   box-shadow: 5px 10px #c1c3e0;
